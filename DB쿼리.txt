@@ -8,26 +8,15 @@ create table music (
   route varchar(30) NOT NULL,
   PRIMARY KEY(musicNumber)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-create table user (  #게임 이후 등록할 유저
-  id varchar(20) NOT NULL,
-  name varchar(20) NOT NULL,
-  PRIMARY KEY(id)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+  
 create table score (
   score int NOT NULL,
-  id varchar(20) NOT NULL,
+  name varchar(30) NOT NULL,
   PRIMARY KEY(score),
-  CONSTRAINT fk1 FOREIGN KEY (id) REFERENCES user (id) 
-  ON DELETE CASCADE
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 create table achievement (
   acheiveNum int NOT NULL,
-  name varchar(30),
-  id varchar(20) NOT NULL,
+  Aname varchar(30),
   PRIMARY KEY(acheiveNum),
-  CONSTRAINT fk2 FOREIGN KEY (id) REFERENCES user (id) 
-  ON DELETE CASCADE
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
