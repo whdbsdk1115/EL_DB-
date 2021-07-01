@@ -18,5 +18,6 @@ create table score (
 create table achievement (
   acheiveNum int NOT NULL,
   Aname varchar(30),
+  ok     varchar(1),
   PRIMARY KEY(acheiveNum),
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
