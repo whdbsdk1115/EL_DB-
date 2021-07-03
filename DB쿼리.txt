@@ -1,16 +1,16 @@
 create table music (
   title varchar(30) NOT NULL,
-  composer varchar(30) NOT NULL,
-  runtime varchar(15) NOT NULL, #runtime은 시간을 체크해서 할 필요는 없으므로 문자열로 타입 변경
+  composer varchar(30),
+  runtime varchar(15), #runtime은 시간을 체크해서 할 필요는 없으므로 문자열로 타입 변경
   musicinfo varchar(50),
   PRIMARY KEY(title)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
 create table score (
   level varchar(10) NOT NULL,
-  score int NOT NULL,
+  score int,
   title varchar(30) NOT NULL,
-  username varchar(30) NOT NULL,
+  username varchar(30),
   CONSTRAINT fk1 FOREIGN KEY (title) REFERENCES music (title) 
   ON DELETE CASCADE,
   PRIMARY KEY(level)
@@ -27,3 +27,4 @@ create table achievement ( #사용할지 모르겠네.. 일단 보류..!
   show tables;
 
 //일단 서버에 업로드는 한 상태 => 테이블 수정하게 되면 여기에도 테이블 삽입 컬럼 수정!!!
+// 2021-07-24 12:03 Update => 주요키 제외한 나머지 요소 NOT NULL 제거 + score 테이블은 level과 title은 미리 삽입해둘 예정이기 때문에 NOT NULL로 지정
