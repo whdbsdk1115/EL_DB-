@@ -1,24 +1,28 @@
 create table music (
-  musicNumber int NOT NULL,
   title varchar(30) NOT NULL,
   composer varchar(30) NOT NULL,
-  runtime time,
+  runtime varchar(15) NOT NULL, #runtime은 시간을 체크해서 할 필요는 없으므로 문자열로 타입 변경
   musicinfo varchar(50),
-  PRIMARY KEY(musicNumber)
+  PRIMARY KEY(title)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
 create table score (
+  level varchar(10) NOT NULL,
   score int NOT NULL,
-  name varchar(30) NOT NULL,
-  PRIMARY KEY(score)
+  title varchar(30) NOT NULL,
+  username varchar(30) NOT NULL,
+  CONSTRAINT fk1 FOREIGN KEY (title) REFERENCES music (title) 
+  ON DELETE CASCADE,
+  PRIMARY KEY(level)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-create table achievement (
+create table achievement ( #사용할지 모르겠네.. 일단 보류..!
   acheiveNum int NOT NULL,
   Aname varchar(30),
   ok     varchar(1),
   PRIMARY KEY(acheiveNum)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  
   
   show tables;
 
