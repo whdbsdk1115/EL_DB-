@@ -1,23 +1,23 @@
 create table music (
-  musicNumber int NOT NULL.
+  musicNumber int NOT NULL,
   title varchar(30) NOT NULL,
   composer varchar(30) NOT NULL,
-  img varchar(30) NOT NULL,
   runtime time,
   musicinfo varchar(50),
-  route varchar(30) NOT NULL,
   PRIMARY KEY(musicNumber)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
 create table score (
   score int NOT NULL,
   name varchar(30) NOT NULL,
-  PRIMARY KEY(score),
+  PRIMARY KEY(score)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 create table achievement (
   acheiveNum int NOT NULL,
   Aname varchar(30),
   ok     varchar(1),
-  PRIMARY KEY(acheiveNum),
+  PRIMARY KEY(acheiveNum)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  
+  show tables;
