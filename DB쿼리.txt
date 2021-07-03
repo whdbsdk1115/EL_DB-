@@ -21,3 +21,5 @@ create table achievement (
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
   show tables;
+
+//일단 서버에 업로드는 한 상태 => 테이블 수정하게 되면 여기에도 테이블 삽입 컬럼 수정!!!
