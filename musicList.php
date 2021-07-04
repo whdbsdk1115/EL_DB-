@@ -17,7 +17,7 @@
 	if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result)){
 			echo "|musicNumber:".$row['musicNumber']. "|title:" .$row['title'];
-		VG	echo "|composer:" .$row['composer']. "|img:" .$row['img'];
+			echo "|composer:" .$row['composer']. "|img:" .$row['img'];
 			echo "|runtime:" .$row['runtime']. "|bpm:" .$row['bpm'];
 			echo "|route:" .$row['route']. "|level:" .$row['level'].";";
 		}
