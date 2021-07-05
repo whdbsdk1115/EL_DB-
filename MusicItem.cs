@@ -20,11 +20,13 @@ public class MusicItem : MonoBehaviour
 
     void Start()
     {
+        /*
         player = UserLogin.InputUserId; //음악 정보 담는거엔 필요없을듯..!
         if (player != null)
         {
             StartCoroutine(GetMusicItem());
         }
+        */
 
     }
 
@@ -32,7 +34,7 @@ public class MusicItem : MonoBehaviour
     {
         WWWForm form = new WWWForm();
 
-        WWW musicData = new WWW("http://122.32.165.55/musicList_coex.php", form); // 변경필요
+        WWW musicData = new WWW("http://122.32.165.55/musicList_coex.php", form); 
         yield return musicData;
         string musicDataString = musicData.text;
         print(musicDataString); 
@@ -49,14 +51,14 @@ public class MusicItem : MonoBehaviour
         musicInfo.text = GetDataValue(music[0], "Information:");
 
     }
-    //사용자 스코어는 다른 테이블에 ...!
+    //사용자 스코어는 다른 테이블에 ...! 이건 통째로 옮겨야할수도...!
     IEnumerator GetPlayerScore(string player, string musicNum) //음악에 대한 사용자 스코어
     {
         WWWForm form = new WWWForm();
         form.AddField("idPost", player);
         form.AddField("musicPost", int.Parse(musicNum));
 
-        WWW ScoreData = new WWW("http://localhost/selectedMusicScore.php", form); //변경필요!
+        WWW ScoreData = new WWW("http://122.32.165.55/selectedMusicScore_coex.php", form); //변경필요! => 아직 못정함!
         yield return ScoreData;
 
         int PlayerScoreData = int.Parse(ScoreData.text);
