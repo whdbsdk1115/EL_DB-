@@ -2,7 +2,7 @@ create table music (
   title varchar(30) NOT NULL,
   composer varchar(30),
   runtime varchar(15), #runtime은 시간을 체크해서 할 필요는 없으므로 문자열로 타입 변경
-  musicinfo varchar(50),
+  musicinfo varchar(200),
   PRIMARY KEY(title)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   
