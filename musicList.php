@@ -1,8 +1,8 @@
 <?php
-	$servername = "localhost";
-	$server_username = "phpmyadmin";
+	$servername = "122.32.165.55";
+	$server_username = "team";
 	$server_password = "abcd1234";
-	$dbname = "wisecle";
+	$dbname = "coex";
 	
 	$conn = new mysqli($servername, $server_username, $server_password, $dbname);
 	
@@ -11,15 +11,15 @@
 		die("Connection Failed.". mysqli_connect_error());
 	}
 	
-	$sql = "select * from music"; //모든 음악 리스트 출력
+	$sql = "select * from musicinfo"; //모든 음악 리스트 출력 및 웹상으로 정보 띄우기
 	$result = mysqli_query($conn, $sql);
 		
 	if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result)){
-			echo "|musicNumber:".$row['musicNumber']. "|title:" .$row['title'];
-			echo "|composer:" .$row['composer']. "|img:" .$row['img'];
-			echo "|runtime:" .$row['runtime']. "|bpm:" .$row['bpm'];
-			echo "|route:" .$row['route']. "|level:" .$row['level'].";";
+			echo "|title:" .$row['title'];
+			echo "|composer:" .$row['composer'];
+			echo "|runtime:" .$row['runtime'];
+			echo "|musicinfo:" .$row['musicinfo'];
 		}
 	}else {
 		echo "music not found";
