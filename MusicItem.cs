@@ -12,19 +12,15 @@ public class MusicItem : MonoBehaviour
 
     public Text musicTitle;
     public Text musicComposer;
-    //public Text musicLevel;
-    public Text musicTime;
-    public Text musicBpm;
-    public Text playerScore;
-    public Text musicPercent;
-    public Text playerScore_text;
+    public Text runTime;
+    public Text musicInfo;
 
     public string[] music;
-    public string InputMusicNum;
+   // public string InputMusicNum;
 
     void Start()
     {
-        player = UserLogin.InputUserId;
+        player = UserLogin.InputUserId; //음악 정보 담는거엔 필요없을듯..!
         if (player != null)
         {
             StartCoroutine(GetMusicItem());
@@ -36,22 +32,24 @@ public class MusicItem : MonoBehaviour
     {
         WWWForm form = new WWWForm();
 
-        WWW musicData = new WWW("http://localhost/musicList.php", form); // 변경필요
+        WWW musicData = new WWW("http://122.32.165.55/musicList_coex.php", form); // 변경필요
         yield return musicData;
         string musicDataString = musicData.text;
-        Debug.Log(musicDataString);
+        print(musicDataString); 
         music = musicDataString.Split(';');
 
+        /*
         InputMusicNum = GetDataValue(music[0], "musicNumber:"); //score 검색할 musicNumber
         StartCoroutine(GetPlayerScore(player, InputMusicNum));
-
+        */
+        //getdataValue
         musicTitle.text = GetDataValue(music[0], "title:");
         musicComposer.text = GetDataValue(music[0], "composer:");
-        musicTime.text = GetDataValue(music[0], "runtime:00:");
-        musicBpm.text = GetDataValue(music[0], "bpm:");
+        runTime.text = GetDataValue(music[0], "runtime:00:");
+        musicInfo.text = GetDataValue(music[0], "Information:");
 
     }
-
+    //사용자 스코어는 다른 테이블에 ...!
     IEnumerator GetPlayerScore(string player, string musicNum) //음악에 대한 사용자 스코어
     {
         WWWForm form = new WWWForm();
@@ -99,7 +97,7 @@ public class MusicItem : MonoBehaviour
     {
         string value = data.Substring(data.IndexOf(index1) + index1.Length);
         value = value.Remove(value.IndexOf("|"));
-        if(index1 == "level:")
+        if(index1 == "level:") //여긴 난이도로 구분짓는건가...?
         {
             value = value.Remove(value.IndexOf(";"));
         }
