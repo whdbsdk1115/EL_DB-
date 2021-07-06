@@ -34,7 +34,7 @@ public class MusicItem : MonoBehaviour
     {
         WWWForm form = new WWWForm();
 
-        WWW musicData = new WWW("http://122.32.165.55/musicList_coex.php", form); 
+        WWW musicData = new WWW("http://122.32.165.55/musicList_coex_.php", form); 
         yield return musicData;
         string musicDataString = musicData.text;
         print(musicDataString); 
