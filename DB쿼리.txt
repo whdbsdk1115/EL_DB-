@@ -8,13 +8,14 @@ create table music (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 # musicinfo를 genre & bpm으로 분류 => runtime & genre & bpm이 모두 musicinfo 내용  
 create table score (
+  scorenum int NOT NULL, 
   level varchar(10) NOT NULL,
   score int,
   title varchar(30) NOT NULL,
   username varchar(30),
   CONSTRAINT fk1 FOREIGN KEY (title) REFERENCES music (title) 
   ON DELETE CASCADE,
-  PRIMARY KEY(level)
+  PRIMARY KEY(scorenum)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 create table achievement ( #사용할지 모르겠네.. 일단 보류..!
