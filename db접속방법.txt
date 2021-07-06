@@ -26,4 +26,4 @@ EX) login_coex_D3.php => D-3조
      login_coex_B5.php => B-5조
 
 
-마지막으로 coex DB에도 여러 테이블이 삽입될것이니 유의 바랍니다.
+마지막으로 coex DB에도 여러 테이블이 삽입될것이니 유의 바랍니다..
