@@ -30,3 +30,17 @@ create table achievement ( #사용할지 모르겠네.. 일단 보류..!
 
 //일단 서버에 업로드는 한 상태 => 테이블 수정하게 되면 여기에도 테이블 삽입 컬럼 수정!!!
 // 2021-07-24 12:03 Update => 주요키 제외한 나머지 요소 NOT NULL 제거 + score 테이블은 level과 title은 미리 삽입해둘 예정이기 때문에 NOT NULL로 지정
+
+
+// score 테이블 insert구문
+INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (10,"EASY","Like that");
+INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (11,"HARD","Like that");
+
+INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (20,"EASY","Roboskater");
+INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (21,"HARD","Roboskater");
+
+INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (30,"EASY","Disco Knights");
+INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (31,"HARD","Disco Knights");
+
+INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (40,"EASY","Project-2-marioish");
+INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (41,"HARD","Project-2-marioish");
