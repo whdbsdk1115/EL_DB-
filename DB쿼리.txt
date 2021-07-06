@@ -1,11 +1,12 @@
 create table music (
   title varchar(30) NOT NULL,
   composer varchar(30),
-  runtime varchar(15), #runtime은 시간을 체크해서 할 필요는 없으므로 문자열로 타입 변경
-  musicinfo varchar(200),
+  runtime varchar(30), #runtime은 시간을 체크해서 할 필요는 없으므로 문자열로 타입 변경
+  genre varchar(50),
+  bpm varchar(10),
   PRIMARY KEY(title)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-  
+# musicinfo를 genre & bpm으로 분류 => runtime & genre & bpm이 모두 musicinfo 내용  
 create table score (
   level varchar(10) NOT NULL,
   score int,
