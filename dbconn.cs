@@ -58,7 +58,7 @@ public DataTable selsql(string sqlcmd)  //리턴 형식을 DataTable로 선언�
 }
 
 
-# 클래스 불러오는 방법 
+# 클래스 불러오는 방법 (다른 c#코드에서 해당 코드를 적어야한다)
 # dbconn mysqlDB = new dbconn();
 # mysqlDB.sqlcmdall("SQL구문을 적으면 됩니다. (UPDATE, INSERT 구문 사용)");
 # DataTable dt = mysqlDB.selsql("SQL구문을 적으면 됩니다. (SELECT구문 사용)'")
