@@ -62,5 +62,7 @@ public DataTable selsql(string sqlcmd)  //리턴 형식을 DataTable로 선언�
 # dbconn mysqlDB = new dbconn();
 # mysqlDB.sqlcmdall("update set score=100000,username='짱구' where level="EASY" AND title="Like that"); ==> 예시 업데이트!
 # 해당 쿼리문을 적는 조건으로 cs파일엔 level과 title을 문자열로 비교해주고 일치할때 조건에 맞는 쿼리 입력하는게 낫지 않을까 생각! 
+# mysqlDB.sqlcmdall("SQL구문을 적으면 됩니다. (UPDATE, INSERT 구문 사용)");
 # switch문? if문? 메모리 할당 고려해서 가장 효율적인 코드로 작성
 # DataTable dt = mysqlDB.selsql("SQL구문을 적으면 됩니다. (SELECT구문 사용)'") => 사용할일 있으면...
+# 퇴근 시켜주세요
