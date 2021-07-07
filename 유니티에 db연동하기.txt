@@ -1,0 +1,5 @@
+파일 다운로드 방법 
+: MySQL 홈페이지 => Download 클릭 => MySQL Community (GPL) Downloads 클릭 => Connector/NET 클릭 => select Operation System에서 .NET& Mono 로 변경
+=> download => No thanks, just start my download 클릭
+
+DLL파일을 가져와 유니티 에셋폴더에 "Plugins"폴더를 만들고 그안에 넣어서 사용
