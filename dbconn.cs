@@ -56,3 +56,9 @@ public DataTable selsql(string sqlcmd)  //리턴 형식을 DataTable로 선언�
 
     return dt; //데이터 테이블을 리턴함
 }
+
+
+# 클래스 불러오는 방법 
+# dbconn mysqlDB = new dbconn();
+# mysqlDB.sqlcmdall("SQL구문을 적으면 됩니다. (UPDATE, INSERT 구문 사용)");
+# DataTable dt = mysqlDB.selsql("SQL구문을 적으면 됩니다. (SELECT구문 사용)'")
