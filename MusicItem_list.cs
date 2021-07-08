@@ -13,24 +13,24 @@ public class MusicItem : MonoBehaviour
     public Text musicTitle;
     public Text musicComposer;
     public Text runTime;
-    public Text musicInfo;
+    public Text genre;
+    public Text bpm;
 
     public string[] music;
    // public string InputMusicNum;
 
     void Start()
     {
-        /*
-        player = UserLogin.InputUserId; //음악 정보 담는거엔 필요없을듯..!
+        player = UserLogin.InputUserId; //음악 정보 담는거엔 필요없을듯..! => 변경필요
         if (player != null)
         {
             StartCoroutine(GetMusicItem());
         }
-        */
+        
 
     }
 
-    IEnumerator GetMusicItem() //음악 리스트 및 그에 대한 사용자 정보
+    IEnumerator GetMusicItem() //음악 리스트 출력 => 정면에!
     {
         WWWForm form = new WWWForm();
 
@@ -48,7 +48,8 @@ public class MusicItem : MonoBehaviour
         musicTitle.text = GetDataValue(music[0], "title:");
         musicComposer.text = GetDataValue(music[0], "composer:");
         runTime.text = GetDataValue(music[0], "runtime:00:");
-        musicInfo.text = GetDataValue(music[0], "Information:");
+        genre.text = GetDataValue(music[0], "genre:");
+        bpm.text = GetDataValue(music[0], "bpm:");
 
     }
     //사용자 스코어는 다른 테이블에 ...! 이건 통째로 옮겨야할수도...!
