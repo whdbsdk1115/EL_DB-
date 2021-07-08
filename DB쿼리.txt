@@ -41,7 +41,7 @@ create table achievement ( #사용할지 모르겠네.. 일단 보류..!
 // 2021-07-24 12:03 Update => 주요키 제외한 나머지 요소 NOT NULL 제거 + score 테이블은 level과 title은 미리 삽입해둘 예정이기 때문에 NOT NULL로 지정
 
 
-// score 테이블 insert구문
+// score 테이블 insert구문 + scorenumd에서 musicnum으로 수정
 INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (10,"EASY","Like that");
 INSERT INTO `score`(`scorenum`,`level`, `title`) VALUES (11,"HARD","Like that");
 
