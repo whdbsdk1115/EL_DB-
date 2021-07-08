@@ -7,27 +7,36 @@ create table music (
   PRIMARY KEY(title)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 # musicinfo를 genre & bpm으로 분류 => runtime & genre & bpm이 모두 musicinfo 내용  
+
 create table score (
-  scorenum int NOT NULL, 
+  musicnum int NOT NULL, #scorenum => musicnum으로 변경 musicnum은 노래에 따른 난이도 구분!
   level varchar(10) NOT NULL,
-  score int,
   title varchar(30) NOT NULL,
-  username varchar(30),
   CONSTRAINT fk1 FOREIGN KEY (title) REFERENCES music (title) 
   ON DELETE CASCADE,
-  PRIMARY KEY(scorenum)
+  PRIMARY KEY(musicnum)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+  
+create table player ( #2020/07/08 정규화를 위해 score테이블에서 유저이름 및 획득점수 분리
+  musicnum int NOT NULL, #외래키로 받아오기 동시에 주요키
+  username varchar(30), 
+  score int,
+  CONSTRAINT fk2 FOREIGN KEY (musicnum) REFERENCES score (musicnum) 
+  ON DELETE CASCADE
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  
 create table achievement ( #사용할지 모르겠네.. 일단 보류..!
   acheiveNum int NOT NULL,
   Aname varchar(30),
   ok     varchar(1),
   PRIMARY KEY(acheiveNum)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-  
-  
-  show tables;
 
+
+  
+    
+ show tables;
+    
 //일단 서버에 업로드는 한 상태 => 테이블 수정하게 되면 여기에도 테이블 삽입 컬럼 수정!!!
 // 2021-07-24 12:03 Update => 주요키 제외한 나머지 요소 NOT NULL 제거 + score 테이블은 level과 title은 미리 삽입해둘 예정이기 때문에 NOT NULL로 지정
 
