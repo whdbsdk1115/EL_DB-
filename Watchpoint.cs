@@ -83,7 +83,7 @@ public class Watchpoint : MonoBehaviour
             }
         }
     }
-    void Search(GameObject target)
+    void Search(GameObject target) # 여기서 난이도 및 노래 선택하면 랭킹에 띄우는 쿼리 필요!
     {
         switch (target.name)
         {
