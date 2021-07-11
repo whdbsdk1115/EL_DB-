@@ -83,19 +83,6 @@ public class MusicItem : MonoBehaviour
         }
     }
 
-    /*
-    void changeStar(int level)
-    {
-        Debug.Log("-------------------------" + level);
-        int t = 1;
-        while (t <= level)
-        {
-            GameObject.Find("star" + t + "").SetActive(false);
-            t++;
-        }
-    }
-    */
-
     string GetDataValue(string data, string index1)
     {
         string value = data.Substring(data.IndexOf(index1) + index1.Length);
