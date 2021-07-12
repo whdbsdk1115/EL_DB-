@@ -63,3 +63,13 @@ public class dbconn : MonoBehaviour
         return dt; //데이터 테이블을 리턴함
     }
 }
+/*
+# 클래스 불러오는 방법 (다른 c#코드에서 해당 코드를 적어야한다)
+# dbconn mysqlDB = new dbconn();
+# mysqlDB.sqlcmdall("update set score=100000,username='짱구' where level="EASY" AND title="Like that"); ==> 예시 업데이트!
+# 해당 쿼리문을 적는 조건으로 cs파일엔 level과 title을 문자열로 비교해주고 일치할때 조건에 맞는 쿼리 입력하는게 낫지 않을까 생각! 
+# mysqlDB.sqlcmdall("SQL구문을 적으면 됩니다. (UPDATE, INSERT 구문 사용)");
+# switch문? if문? 메모리 할당 고려해서 가장 효율적인 코드로 작성
+# DataTable dt = mysqlDB.selsql("SQL구문을 적으면 됩니다. (SELECT구문 사용)'") => 사용할일 있으면...
+# 월요일 시러ㅓㅓㅓㅓㅓㅓㅓ
+*/
