@@ -11,10 +11,10 @@ using MySql.Data.MySqlClient;    //클라이언트 기능을사용하기 위해�
 public class dbconn 
 {
     MySqlConnection sqlconn = null;
-    public string sqlDBip = "122.32.165.55";
-    public string sqlDBname = "coex";
-    public string sqlDBid = "team";
-    public string sqlDBpw = "abcd1234";
+    private string sqlDBip = "122.32.165.55";
+    private string sqlDBname = "coex";
+    private string sqlDBid = "team";
+    private string sqlDBpw = "abcd1234";
 
 
     private void sqlConnect()
