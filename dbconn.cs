@@ -8,7 +8,7 @@ using System.Data;     //C#의 데이터 테이블 때문에 사용
 using MySql.Data;     //MYSQL함수들을 불러오기 위해서 사용
 using MySql.Data.MySqlClient;    //클라이언트 기능을사용하기 위해서 사용
 
-public class dbconn : MonoBehaviour
+public class dbconn 
 {
     MySqlConnection sqlconn = null;
     public string sqlDBip = "122.32.165.55";
